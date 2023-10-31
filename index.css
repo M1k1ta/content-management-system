@@ -1,0 +1,89 @@
+body, ul, p, li {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.loader::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #4d85ff;
+  border-color: #4d85ff transparent #4d85ff transparent;
+  animation: loader 1.2s linear infinite;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.header {
+  height: 60px;
+  background-color: #fafafa;
+}
+
+.nav {
+  padding: 10px;
+}
+.nav__list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  height: 40px;
+}
+.nav__item {
+  margin-right: 10px;
+}
+.nav__link {
+  position: relative;
+  padding: 10px;
+  color: #000;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background-color 300ms, color 300ms;
+}
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  bottom: 0;
+  background-color: #4d85ff;
+  height: 2px;
+  transform: scaleX(0);
+  transition: transform 300ms;
+}
+.nav__link:hover {
+  background-color: #efefef;
+}
+.nav__link--active {
+  color: #4d85ff;
+}
+.nav__link--active::after {
+  transform: scaleX(100%);
+}
+
+/*# sourceMappingURL=index.css.map */
