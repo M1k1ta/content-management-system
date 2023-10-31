@@ -1,0 +1,57 @@
+@import '../../styles/vars';
+
+.header {
+  height: 60px;
+  background-color: $header-color;
+}
+
+.nav {
+  padding: 10px;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+
+    height: 40px;
+  }
+
+  &__item {
+    margin-right: 10px;
+  }
+
+  &__link {
+    position: relative;
+    padding: 10px;
+    color: $text-color;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color $transition-time, color $transition-time;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      right: 5px;
+      bottom: 0;
+
+      background-color: $main-color;
+      height: 2px;
+
+      transform: scaleX(0);
+      transition: transform $transition-time;
+    }
+
+    &:hover {
+      background-color: $hover-color;
+    }
+
+    &--active {
+      color: $main-color;
+
+      &::after {
+        transform: scaleX(100%);
+      }
+    }
+  }
+}
